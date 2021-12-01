@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>New recipe</title>
+</head>
+<body>
+    
+    <div class="log_reg">
+        {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+            {% if messages %}                            <!-- check if there are any messages -->
+                {% for message in messages %}            <!-- loop through the messages -->
+                    <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+                {% endfor %}
+            {% endif %}
+        {% endwith %}   
+        </div>
+
+        <div class="container-md bg-dark">
+            <h1 class="container-sm bg-secondary text-warning">
+                Arbortrary
+            </h1>
+            <h3 class="text-danger">A site to track randomly planted trees</h3>
+            <h3 class="text-danger"></h3>
+            </div>
+        
+
+            <div>
+                <a href="/user/account">My Tree</a> 
+            </div>
+
+
+    <div class="container-sm bg-dark border border-warning rounded"  >
+        <div class="d-inline-flex p-2 bd-highlight">
+            <form action="/users/create" method="POST">
+                <h2 class="text-warning ">Create a new Tree Below</h2>
+                <p>
+                    <input name="species" type="text"  class="form-control" placeholder="Name of species">
+                </p>
+                <p>
+                    <input name="location" type="text"  class="form-control" placeholder="location">
+                </p>
+                <p>
+                    <input name="reason" class="form-control" type="text" placeholder="reason">
+                </p>
+                <p>
+                    <input name="date_planted" class="form-control" type="date" placeholder="date_planted">
+                </p>
+            <div class="form-check">
+                    <button type="submit" class="btn btn-info" >Create</button>
+                </div>
+            </form>
+            <div>
+                <a input type="button" class="btn btn-warning border border-dark" href="/logout">Logout</a>
+            </div>        
+            <div>
+                <a input type="button" class="btn btn-warning" href="/dashboard"> Dashboard</a>
+            </div>
+            <div>
+                <a class="btn btn-primary border border-dark" href="/logout" role="button">Logout</a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+        integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+        crossorigin="anonymous"></script>
+</body>
+</html>
